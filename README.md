@@ -29,23 +29,23 @@ yarn add jsr:@ryu/platformdirs  # for Yarn
 import { userCacheDir, userConfigDir, userDataDir } from "@ryu/platformdirs";
 
 // Get user data directory
-const dataDir = userDataDir({ appName: "MyApp" });
+const dataDir = userDataDir({ appName: "MyApp", appAuthor: "MyCompany" });
 console.log(dataDir);
-// Windows: C:\Users\Username\AppData\Local\MyApp
+// Windows: C:\Users\Username\AppData\Local\MyCompany\MyApp
 // macOS:   /Users/Username/Library/Application Support/MyApp
 // Linux:   /home/username/.local/share/MyApp
 
 // Get user config directory
-const configDir = userConfigDir({ appName: "MyApp" });
+const configDir = userConfigDir({ appName: "MyApp", appAuthor: "MyCompany" });
 console.log(configDir);
-// Windows: C:\Users\Username\AppData\Local\MyApp
-// macOS:   /Users/Username/Library/Preferences/MyApp
+// Windows: C:\Users\Username\AppData\Local\MyCompany\MyApp
+// macOS:   /Users/Username/Library/Application Support/MyApp
 // Linux:   /home/username/.config/MyApp
 
 // Get user cache directory
-const cacheDir = userCacheDir({ appName: "MyApp" });
+const cacheDir = userCacheDir({ appName: "MyApp", appAuthor: "MyCompany" });
 console.log(cacheDir);
-// Windows: C:\Users\Username\AppData\Local\cache\MyApp
+// Windows: C:\Users\Username\AppData\Local\MyCompany\MyApp\Cache
 // macOS:   /Users/Username/Library/Caches/MyApp
 // Linux:   /home/username/.cache/MyApp
 ```
@@ -54,15 +54,6 @@ console.log(cacheDir);
 
 ```typescript
 import { siteDataDir, userDataDir } from "@ryu/platformdirs";
-
-// With app author (Windows only)
-const dataDir = userDataDir({
-  appName: "MyApp",
-  appAuthor: "MyCompany",
-});
-// Windows: C:\Users\Username\AppData\Local\MyCompany\MyApp
-// macOS:   /Users/Username/Library/Application Support/MyApp
-// Linux:   /home/username/.local/share/MyApp
 
 // With version
 const versionedDir = userDataDir({
