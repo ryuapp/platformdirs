@@ -100,6 +100,7 @@ const siteDir = siteDataDir({ appName: "MyApp" });
 - `userConfigDir(options?: DirectoryOptions)` - User-specific configuration
 - `userCacheDir(options?: DirectoryOptions)` - User-specific cache files
 - `userLogDir(options?: DirectoryOptions)` - User-specific log files
+- `userStateDir(options?: DirectoryOptions)` - User-specific state files
 - `userRuntimeDir(options?: DirectoryOptions)` - User-specific runtime files
 - `siteDataDir(options?: MultipathDirectoryOptions)` - Site-wide data files
 - `siteConfigDir(options?: MultipathDirectoryOptions)` - Site-wide configuration
