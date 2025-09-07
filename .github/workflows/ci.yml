@@ -1,0 +1,31 @@
+name: ci
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup Deno
+        uses: denoland/setup-deno@v2
+
+      - name: Lint
+        run: deno lint
+
+      - name: Test
+        run: deno task test
+
+      - name: Types
+        run: deno check
+
+      - name: Format
+        run: deno fmt --check
+
+      - name: Dry run to publish to JSR
+        run: deno publish --dry-run
