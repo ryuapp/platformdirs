@@ -13,7 +13,7 @@
     "proseWrap": "preserve"
   },
   "tasks": {
-    "result": "deno run -SRE ./srcripts/show-paths.ts",
+    "show:paths": "deno run -SRE ./scripts/show-paths.ts",
     "test": "deno test -SE --parallel"
   },
   "lock": false

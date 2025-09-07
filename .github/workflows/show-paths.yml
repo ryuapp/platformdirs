@@ -16,4 +16,4 @@ jobs:
         uses: denoland/setup-deno@v2
 
       - name: Show platform directories
-        run: deno task result
+        run: deno task show:paths
